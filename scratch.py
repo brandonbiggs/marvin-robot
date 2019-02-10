@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-# from robotFiles.Marvin import Marvin
-from robotFiles.MarvinJunior import MarvinJunior
-import turtle
+from Marvin import Marvin
+from MarvinJunior import MarvinJunior
 
 # marvin = Marvin()
 
