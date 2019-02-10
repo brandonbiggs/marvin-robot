@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 ######################################################
 # Brandon Biggs
-# Idaho State University
 # This is where the magic happens
 ######################################################
 # Marvin Framework

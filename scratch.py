@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from marvin import Marvin
-from MarvinJunior import MarvinJunior
+from modules.marvin import Marvin
+from modules.marvin_junior import MarvinJunior
 
 # marvin = Marvin()
 
@@ -18,7 +18,7 @@ from MarvinJunior import MarvinJunior
 
 # Working on this now -
 # marvin.moveForward(7, 7)
-# marvin.speak("Hi Kayla! Brandon loves you!")
+# marvin.speak("Hello world!")
 # marvin.moveBackward(7,7)
 # marvin.speak("Hello boss!")
 

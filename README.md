@@ -7,3 +7,17 @@ This is an incredibly simplified wrapper for the Lego Mindstorm ev3dev project. 
 2. Flash the ev3dev image to an SD card - https://www.ev3dev.org/
 3. Ensure that the ev3dev image loads on the mindstorm robot
 4. ...
+
+# Examples:
+The following 4 lines will move the mindstorm robot forward, have it say 
+"Hello world" and then move back to it's original starting point. 
+The purpose here is to demonstrate what programming can do, while doing so 
+in as simple lines as possible. 
+
+marvin = Marvin()
+
+marvin.moveForward(7, 7)
+
+marvin.speak("Hello world!")
+
+marvin.moveBackward(7,7)
