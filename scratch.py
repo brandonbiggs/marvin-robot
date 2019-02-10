@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from Marvin import Marvin
+from marvin import Marvin
 from MarvinJunior import MarvinJunior
 
 # marvin = Marvin()
