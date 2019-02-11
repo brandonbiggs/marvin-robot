@@ -21,20 +21,3 @@ from modules.marvin_junior import MarvinJunior
 # marvin.speak("Hello world!")
 # marvin.moveBackward(7,7)
 # marvin.speak("Hello boss!")
-
-marvinJunior = MarvinJunior()
-marvinJunior.print_screen_size()
-temp = 40
-
-# marvinJunior.ensure_turtle_boundaries(temp)
-# marvinJunior.move_left_track(1000, 10)
-
-marvinJunior.move(temp, 10)
-# marvinJunior.move(temp, 10)
-# marvinJunior.execute()
-
-# marvinJunior.test()
-
-# marvinJunior.printToScreen("test!")
-
-# marvinJunior.printMarvinProgram()
