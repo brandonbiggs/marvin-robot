@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from modules.marvin import Marvin
-from modules.marvin_junior import MarvinJunior
+# from modules.marvin import Marvin
+# from modules.marvin_junior import MarvinJunior
 
 # marvin = Marvin()
 
@@ -22,10 +22,10 @@ from modules.marvin_junior import MarvinJunior
 # marvin.moveBackward(7,7)
 # marvin.speak("Hello boss!")
 
-marvinJunior = MarvinJunior()
+# marvinJunior = MarvinJunior()
 
 # marvinJunior.printToScreen("test!")
 
 # marvinJunior.printMarvinProgram()
 
-marvinJunior.test()
+# marvinJunior.test()

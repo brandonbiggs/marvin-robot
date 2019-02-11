@@ -79,7 +79,7 @@ class Marvin:
         motor.run_timed(time_sp=timeToRun, speed_sp=speed)
         time.sleep(timeToRun/1000)
 
-    # Does not work right now
+    # TODO - Figure out a better way of implementing this
     @staticmethod
     def move_hands(time_to_move, speed, direction):
         # Examples:

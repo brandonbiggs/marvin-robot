@@ -7,23 +7,24 @@
 
 import turtle as t
 import time
+import pyttsx3
 
 class MarvinJunior:
     height = 0
     width = 0
     turtle = 0
     screen = 0
-    marvinProgram = ""
+    marvin_program = ""
 
-    def printMarvinProgram(self):
-        print(self.marvinProgram)
+    def print_marvin_program(self):
+        print(self.marvin_program)
 
     def __init__(self):
         self.turtle = t.Turtle()
         self.screen = t.Screen()
         self.height = self.screen.window_height()
         self.width = self.screen.window_width()
-        self.marvinProgram = "#!/usr/bin/env python3 \n" \
+        self.marvin_program = "#!/usr/bin/env python3 \n" \
                              "##############################\n" \
                              "# Generated Marvin wrapped python file to run robot.\n" \
                              "# Put this file on the robot, make sure this file has proper permissions\n" \
@@ -31,9 +32,15 @@ class MarvinJunior:
                              "##############################\n" \
                              "marvin = Marvin()\n"
 
-    def printScreenSize(self):
+    def print_screen_size(self):
         print("The current height of the drawable area is " + str(self.height))
         print("The current width of the drawable area is " + str(self.width))
+
+    @staticmethod
+    def speak(statement):
+        engine = pyttsx3.init()
+        engine.say(statement)
+        engine.runAndWait()
 
     def test(self):
         self.turtle.write("Home = ", False, align="center")
@@ -54,7 +61,7 @@ class MarvinJunior:
     def move(self):
         print("Not yet defined!")
 
-    def printToScreen(self, statement):
-        self.marvinProgram += "marvin.printToScreen(\"" + statement + "\")\n"
+    def print_to_screen(self, statement):
+        self.marvin_program += "marvin.print_to_screen(\"" + statement + "\")\n"
         self.turtle.write(statement, False, align="left")
         time.sleep(3)
