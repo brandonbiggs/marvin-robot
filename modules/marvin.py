@@ -3,7 +3,7 @@
 # Brandon Biggs
 # This is where the magic happens
 ######################################################
-# Marvin Framework
+# Marvin Framework/Wrapper
 
 import os
 import sys
@@ -58,61 +58,31 @@ class Marvin:
     # Marvin will speak to you
     @staticmethod
     def speak(statement):
-        ev3.Sound.speak(statement)
-        time.sleep(5)
-    
-    # TODO - This isn't appropriately named as it does more than just opens
-    @staticmethod
-    def open_hands():
-        time_to_run = 2000
-        speed = 500
-        motor = ev3.MediumMotor('outA')
+        ev3.Sound.speak(statement).wait()
+
+    # Opens Marvin's Grippers
+    def open_hands(self):
+        time_to_run = 3000
+        speed = -800
+        motor = ev3.MediumMotor(self._gripper_motor)
         motor.run_timed(time_sp=time_to_run, speed_sp=speed)
-        time.sleep(time_to_run/1000)
+        time.sleep(time_to_run/1000 + 1)
 
-    # TODO - This isn't appropriately named as it does more than just closes
-    @staticmethod
-    def close_hands():
-        timeToRun = 2000
-        speed = -500
-        motor = ev3.MediumMotor('outA')
+    # Closes Marvin's Grippers
+    def close_hands(self):
+        timeToRun = 3000
+        speed = 800
+        motor = ev3.MediumMotor(self._gripper_motor)
         motor.run_timed(time_sp=timeToRun, speed_sp=speed)
-        time.sleep(timeToRun/1000)
-
-    # TODO - Figure out a better way of implementing this
-    @staticmethod
-    def move_hands(time_to_move, speed, direction):
-        # Examples:
-        #   moveHands(2, 5, "forward")
-        # time_sp - 
-        # speed_sp - Sets the speed in tacho counts/second. Negative means run in reverse
-        time_to_move = time_to_move*1000
-        movement_direction = 1
-        if direction == "reverse":
-            movement_direction = -1
-        speed = speed*movement_direction*100
-        
-        motor = ev3.MediumMotor('outA')
-        motor.run_timed(time_sp=time_to_move, speed_sp=speed)
+        time.sleep(timeToRun/1000 + 1)
 
     # Moves the left track
     def move_left_track(self, time_to_move, speed, sleep=True):
-        # time = seconds, speed = 1-10
-        movement_time = time_to_move*1000
-        movement_speed = speed*100
-        motor = ev3.Motor(self._left_track)
-        motor.run_timed(time_sp=movement_time, speed_sp=movement_speed)
-        if sleep:
-            time.sleep(time_to_move)
-    
+        self._move_track(time_to_move, speed, self._left_track, sleep)
+
     # Moves the right Track
     def move_right_track(self, time_to_move, speed, sleep=True):
-        movement_time = time_to_move*1000
-        movement_speed = speed*100
-        motor = ev3.Motor(self._right_track)
-        motor.run_timed(time_sp=movement_time, speed_sp=movement_speed)
-        if sleep:
-            time.sleep(time_to_move)
+        self._move_track(time_to_move, speed, self._right_track, sleep)
 
     # Moves Marvin forward
     def move_forward(self, time_to_move, speed):
@@ -127,10 +97,24 @@ class Marvin:
         self.move_left_track(time_to_move, speed, False)
         time.sleep(time_to_move)
 
-    # TODO
-    def turn(self, degrees, direction):
-        print("Not yet defined!")
+    @staticmethod
+    def _move_track(time_to_move, speed, track, sleep=True):
+        movement_time = time_to_move*1000
+        movement_speed = speed*100
+        motor = ev3.Motor(track)
+        motor.run_timed(time_sp=movement_time, speed_sp=movement_speed)
+        if sleep:
+            time.sleep(time_to_move)
 
-    # TODO
+    # TODO - Currently just for 90 degree turns left or right
+    def turn(self, degrees, direction):
+        if direction == "left":
+            self._move_track(1.2, 5, self._left_track)
+        elif direction == "right":
+            self._move_track(0.9, 5, self._right_track)
+        else:
+            self.speak("I don't know what direction " + direction + " is. Sorry.")
+
+    # TODO - Not yet ready to be implemented.
     def shoot_ball(self):
         print("Not yet defined!")
