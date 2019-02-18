@@ -5,7 +5,6 @@
 ######################################################
 
 from modules.marvin import Marvin
-# from modules.marvin_junior import MarvinJunior
 
 marvin = Marvin()
 
