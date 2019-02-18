@@ -10,16 +10,13 @@ import sys
 import time
 import ev3dev.ev3 as ev3
 
-class Marvin:
-    # Constants
-    _on = True
-    _off = False
-    _gripper_motor = "outA"
+class Robot:
     _left_track = "outB"
     _right_track = "outC"
+    _on = True
+    _off = False
 
-    def __init__(self, gripper_motor="outA", left_track="outB", right_track="outC"):
-        self._gripper_motor = gripper_motor
+    def __init__(self, left_track="outB", right_track="outC"):
         self._left_track = left_track
         self._right_track = right_track
 
@@ -60,22 +57,6 @@ class Marvin:
     def speak(statement):
         ev3.Sound.speak(statement).wait()
 
-    # Opens Marvin's Grippers
-    def open_hands(self):
-        time_to_run = 3000
-        speed = -800
-        motor = ev3.MediumMotor(self._gripper_motor)
-        motor.run_timed(time_sp=time_to_run, speed_sp=speed)
-        time.sleep(time_to_run/1000 + 1)
-
-    # Closes Marvin's Grippers
-    def close_hands(self):
-        timeToRun = 3000
-        speed = 800
-        motor = ev3.MediumMotor(self._gripper_motor)
-        motor.run_timed(time_sp=timeToRun, speed_sp=speed)
-        time.sleep(timeToRun/1000 + 1)
-
     # Moves the left track
     def move_left_track(self, time_to_move, speed, sleep=True):
         self._move_track(time_to_move, speed, self._left_track, sleep)
@@ -85,13 +66,13 @@ class Marvin:
         self._move_track(time_to_move, speed, self._right_track, sleep)
 
     # Moves Marvin forward
-    def move_forward(self, time_to_move, speed):
+    def move_forward(self, time_to_move=3, speed=5):
         self.move_right_track(time_to_move, speed, False)
         self.move_left_track(time_to_move, speed, False)
         time.sleep(time_to_move)
 
     # Moves Marvin backward
-    def move_backward(self, time_to_move, speed):
+    def move_backward(self, time_to_move=3, speed=5):
         speed = speed * (-1)
         self.move_right_track(time_to_move, speed, False)
         self.move_left_track(time_to_move, speed, False)
@@ -106,6 +87,10 @@ class Marvin:
         if sleep:
             time.sleep(time_to_move)
 
+    @staticmethod
+    def wait(seconds=5):
+        time.sleep(seconds)
+
     # TODO - Currently just for 90 degree turns left or right
     def turn(self, degrees, direction):
         if direction == "left":
@@ -115,6 +100,41 @@ class Marvin:
         else:
             self.speak("I don't know what direction " + direction + " is. Sorry.")
 
+
+# Added a unique class for the Ev3rstorm Mindstorm. Inherits from Robot class
+class Optimus(Robot):
+
+    def __init__(self):
+        Robot.__init__(self)
+
+# Added a unique class for the Gripp3r Mindstorm. Inherits from the Robot Class
+class Marvin(Robot):
+    # Constants
+    _gripper_motor = "outA"
+
+    def __init__(self, gripper_motor="outA", left_track="outB", right_track="outC"):
+        Robot.__init__(self, left_track, right_track)
+        self._gripper_motor = gripper_motor
+        # self._left_track = left_track
+        # self._right_track = right_track
+
+    # Opens Grippers
+    def open_hands(self):
+        time_to_run = 3000
+        speed = -800
+        motor = ev3.MediumMotor(self._gripper_motor)
+        motor.run_timed(time_sp=time_to_run, speed_sp=speed)
+        time.sleep(time_to_run/1000 + 1)
+
+    # Closes Grippers
+    def close_hands(self):
+        time_to_run = 3000
+        speed = 800
+        motor = ev3.MediumMotor(self._gripper_motor)
+        motor.run_timed(time_sp=time_to_run, speed_sp=speed)
+        time.sleep(time_to_run/1000 + 1)
+
     # TODO - Not yet ready to be implemented.
-    def shoot_ball(self):
+    @staticmethod
+    def shoot_ball():
         print("Not yet defined!")
