@@ -1,36 +1,51 @@
-# Marvin-robot
-This is an incredibly simplified wrapper for the Lego Mindstorm ev3dev project. The purpose of this wrapper is to help beginning programmers understand syntax of programming while also applying it to something physical that they can play with using the Mindstorm robots.
+# MindStorm-Robot-Wrapper
+This is an incredibly simplified wrapper for the 
+Lego Mindstorm ev3dev project. The purpose of this wrapper is 
+to help beginning programmers understand syntax of programming 
+while also applying it to something physical that they can play 
+with using the Mindstorm robots. Currently applicable to the 
+Ev3rstorm and Gripp3r Mindstorms, which we call Optimus and Marvin
+respectively.
 
 ## Setup
-- Follow the [documentation that I've created here.](https://docs.google.com/document/d/1cj98JHj5M_i-QrvKaLd5K82HGd4Qhz4xW53OiZgttpE/edit#heading=h.pn6cqlpvu8bl) 
+Follow the [documentation that I've created here.](https://docs.google.com/document/d/1WuTqk7fjde5Rwf2bOF8vLoq1V6aUO0KrKUS8NC2bF5w/edit#heading=h.316sdw9ig3yl) 
 
 ### Available Commands
 More coming soon!
 
-\# Will print to your Lego Mindstorm's screen
+##### Print to your Lego Mindstorm's screen
 
-marvin.print_to_screen("Put whatever you want inside these quotes!")
+print_to_screen("Put whatever you want inside these quotes!")
 
-\# Will use the Mindstorm's microphone to speak
+##### Use the Mindstorm's microphone to speak
 
-marvin.speak("Put whatever you want inside these quotes!")
+speak("Put whatever you want inside these quotes!")
 
-\# Moves the robot forward. Default is 3 seconds
+##### Move the robot forward. Default is 3 seconds
 
-marvin.move_forward()
+move_forward()
 
-\# Moves the robot backwards. Default is 3 seconds
-marvin.move_backward()
+##### Moves the robot backwards. Default is 3 seconds
 
-#### Gripper Specific Commands
+move_backward()
 
-\# Closes the gripper's claws
+##### Have the robot wait. Default is 5 seconds
+
+wait()
+
+### Gripp3r Specific Commands
+
+##### Closes the gripper's claws
 
 marvin.close_hands()
 
-\# Opens the gripper's claws
+##### Opens the gripper's claws
 
 marvin.open_hands()
+
+### Ev3rStorm Specific Commands
+
+None yet
 
 ## Examples:
 There is sample code in robot.py. 
@@ -49,17 +64,18 @@ marvin.speak("Hello world!")
 marvin.moveBackward(7,7)
 
 ## Recent Features
+- Refactored wrapper to have default robot class that has the universal
+commands for the Mindstorms. Marvin inherits from this class
+- Added a class for the Ev3rstorms. I'm calling this "Optimus"
+- Every command using either Marvin or Optimus has a default value, except turn, which requires
+at least a left or right direction
+- wait command has been added. Default wait is 5 seconds
 - Marvin will speak to you and write out to the screen with a simple command for each
 - Opening and closing the grippers works pretty well
 - Turning should now work for 90 degree turns.
 - Moving now uses the same functions, just works based off of motor
 
 ## TODO - Tasks that I'm still working on
-- Update the marvin.py commands to all have default values
-- Write more documentation on available commands
-- Add a wait command
-- Probably will need to create a few more classes and have more of an inheritance
-structure setup as we add commands for the other mindstorms.
 - Get turning working for specific degree rotations based on user input
 - Figure out how to connect via bluetooth or wifi
 - Marvin junior still needs ample work ensuring it matches up with Marvin, but priority right now is
