@@ -4,7 +4,7 @@
 # Create Marvin and have Marvin do fun things!
 ######################################################
 
-from modules.marvin import Marvin
+from modules.robot import Marvin
 
 marvin = Marvin()
 
@@ -16,6 +16,6 @@ marvin.close_hands()
 
 marvin.open_hands()
 
-marvin.move_forward(7, 7)
+marvin.move_forward()
 
-marvin.move_backward(7,7)
+marvin.move_backward()
