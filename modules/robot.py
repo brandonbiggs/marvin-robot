@@ -82,8 +82,8 @@ class Robot:
     # Moves Marvin backward
     def move_backward(self, time_to_move=3, speed=5):
         speed = speed * (-1)
-        self.move_right_track(time_to_move, speed, False)
-        self.move_left_track(time_to_move, speed, False)
+        self.__move_right_track(time_to_move, speed, False)
+        self.__move_left_track(time_to_move, speed, False)
         time.sleep(time_to_move)
 
     @staticmethod
@@ -160,7 +160,7 @@ class Marvin(Robot):
         time.sleep(time_to_run/1000 + 1)
 
     def turn(self, direction, degrees=90, seconds=1, speed=6):
-        degree_factor = 1
+        degree_factor = 0.01
         seconds = degree_factor * degrees * seconds
         Robot._turn(self, direction, speed, seconds)
 
