@@ -10,7 +10,7 @@ from modules.robot import Optimus
 
 marvin = Marvin()
 
-marvin.print_to_screen("Print to screen!")
+marvin.print_to_screen("Print test to screen!")
 marvin.speak("Hello. I am Marvin. Nice to meet you!")
 marvin.close_hands()
 marvin.open_hands()
