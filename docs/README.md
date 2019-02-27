@@ -2,6 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
+permalink: /docs
 ---
 
 # Marvin: The Lego MindStorm Robot Wrapper
