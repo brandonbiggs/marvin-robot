@@ -1,3 +1,9 @@
+---
+layout: default
+title: Future Work
+nav_order: 6
+---
+
 ## TODO - Tasks that I'm still working on
 - Get turning working for specific degree rotations based on user input
 - Figure out how to connect via bluetooth or wifi

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Full Reference
+nav_order: 3
+---
+
 ### Available Commands
 More coming soon!
 

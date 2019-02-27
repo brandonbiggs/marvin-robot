@@ -1,3 +1,9 @@
+---
+layout: default
+title: Customization
+nav_order: 5
+---
+
 ## Recent Features
 - Refactored wrapper to have default robot class that has the universal
 commands for the Mindstorms. Marvin inherits from this class

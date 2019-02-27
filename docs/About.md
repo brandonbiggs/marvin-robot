@@ -1,3 +1,9 @@
+---
+layout: default
+title: About
+nav_order: 7
+---
+
 ## Notes and Credit
 Python naming conventions - https://medium.com/@dasagrivamanu/python-naming-conventions-the-10-points-you-should-know-149a9aa9f8c7
 
