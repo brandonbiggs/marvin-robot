@@ -4,7 +4,6 @@ title: Home
 nav_order: 1
 permalink: /docs
 ---
-
 # Marvin: The Lego MindStorm Robot Wrapper
 This is an incredibly simplified wrapper for the 
 Lego Mindstorm ev3dev project. The purpose of this wrapper is 
