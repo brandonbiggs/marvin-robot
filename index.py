@@ -1,28 +1,26 @@
 #!/usr/bin/env python3
 ######################################################
-# Brandon Biggs
-# Examples of some of the fun things that your Mindstorm can do
-# Marvin is the Gripp3r and Optimus is the Ev3rstorm
+# Here you will find some examples of code that the Lego Mindstorm can run.
+# Inside of the parenthesis, you'll find multiple parameters of "word=".
+#       These are all examples of things that you can use, but don't have to.
+#       If you want to use these, just change the number or text inside of parenthesis
 ######################################################
 
-from modules.robot import Marvin
-from modules.robot import Optimus
+from modules.robot import *
+
+marvin = Robot()
+marvin.print_to_screen(statement="Print test to screen!")
+marvin.speak(statement="Hello. I am Marvin. Nice to meet you!")
+marvin.move_backward(seconds_to_move=3, speed=5)
+marvin.move_forward(seconds_to_move=3, speed=5)
+marvin.wait(seconds=5)
 
 marvin = Marvin()
-
-marvin.print_to_screen("Print test to screen!")
-marvin.speak("Hello. I am Marvin. Nice to meet you!")
+marvin.turn("right", degrees=90, seconds=1, speed=6)
+marvin.turn("left", degrees=90, seconds=1, speed=6)
 marvin.close_hands()
 marvin.open_hands()
-marvin.move_forward()
-marvin.move_backward()
-marvin.turn("right")
-marvin.turn("left")
 
 optimus = Optimus()
-optimus.print_to_screen("Print to screen!")
-optimus.speak("Hello. I am Optimus. Nice to meet you.")
-optimus.move_forward()
-optimus.move_backward()
-optimus.turn("right")
-optimus.turn("left")
+optimus.turn("right", degrees=90, seconds=1, speed=6)
+optimus.turn("left", degrees=90, seconds=1, speed=6)

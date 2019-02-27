@@ -74,17 +74,17 @@ class Robot:
             self.speak("I don't know what direction " + direction + " is. Sorry.")
 
     # Moves Marvin forward
-    def move_forward(self, time_to_move=3, speed=5):
-        self.__move_right_track(time_to_move, speed, False)
-        self.__move_left_track(time_to_move, speed, False)
-        time.sleep(time_to_move)
+    def move_forward(self, seconds_to_move=3, speed=5):
+        self.__move_right_track(seconds_to_move, speed, False)
+        self.__move_left_track(seconds_to_move, speed, False)
+        time.sleep(seconds_to_move)
 
     # Moves Marvin backward
-    def move_backward(self, time_to_move=3, speed=5):
+    def move_backward(self, seconds_to_move=3, speed=5):
         speed = speed * (-1)
-        self.__move_right_track(time_to_move, speed, False)
-        self.__move_left_track(time_to_move, speed, False)
-        time.sleep(time_to_move)
+        self.__move_right_track(seconds_to_move, speed, False)
+        self.__move_left_track(seconds_to_move, speed, False)
+        time.sleep(seconds_to_move)
 
     @staticmethod
     def wait(seconds=5):
