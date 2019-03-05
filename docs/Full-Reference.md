@@ -4,38 +4,98 @@ title: Full Reference
 nav_order: 3
 ---
 
-### Available Commands
-More coming soon!
+### Table of Contents
+**[Print](#print)**<br>
+**[Speak](#speak)**<br>
+**[Move Forward](#move-forward)**<br>
+**[Move Backward](#moves-backward)**<br>
+**[Wait](#wait)**<br>
+**[Gripp3r Specific](#gripp3r-specific-commands)**<br>
+**[Ev3rstorm Specific](#ev3rstorm-specific-commands)**<br>
 
-##### Print to your Lego Mindstorm's screen
 
-`print_to_screen("Put whatever you want inside these quotes!")`
+#### Print
+This will allow you to print to your Lego Mindstorm's screen.
+The print_to_screen command does not need any parameters by default.
 
-##### Use the Mindstorm's microphone to speak
+```python
+marvin = Robot()
+marvin.print_to_screen()
+```
+> Hello everyone!
 
-`speak("Put whatever you want inside these quotes!")`
+You are welcome to pass it a statement, which will be printed to the Mindstorm screen
 
-##### Move the robot forward. Default is 3 seconds
+```python
+marvin = Robot()
+marvin.print_to_screen("Put whatever you want inside these quotes!")
+```
+> Put whatever you want inside these quotes!
 
-`move_forward()`
+#### Speak
+Use this command to have your Lego Mindstorm speak to you through the 
+built in speaker. The speak command does not need any parameters 
+by default.
 
-##### Moves the robot backwards. Default is 3 seconds
+```python
+marvin = Robot()
+marvin.speak()
+```
+> Hello. I am Marvin. Nice to meet you.
 
-`move_backward()`
+You are welcome to pass a statement to the speak command as well.
+```python
+marvin = Robot()
+marvin.speak("Put whatever you want inside these quotes!")
+```
+> Put whatever you want inside these quotes!
 
-##### Have the robot wait. Default is 5 seconds
+#### Move Forward
+TODO - This will be improved soon
+```python
+marvin = Robot()
+marvin.move_forward()
+```
 
-`wait()`
+#### Moves Backward
+TODO - This will be improved soon
+```python
+marvin = Robot()
+marvin.move_backward()
+```
+
+#### Wait
+This command will pause the robot for 5 seconds.
+```python
+marvin = Robot()
+marvin.wait()
+```
+> 5 second pause
+
+You can increase or decrease this time by passing the number of seconds
+as a parameter.
+```python
+marvin = Robot()
+marvin.wait(seconds=10)
+```
+> 10 second pause
 
 ### Gripp3r Specific Commands
 
-##### Closes the gripper's claws
+#### Close Gripp3r Claws
+This will close the Gripp3r's claws and move the claws upward, lifting
+the object slightly off the ground.
+```python
+marvin = Robot()
+marvin.close_hands()
+```
 
-`marvin.close_hands()`
-
-##### Opens the gripper's claws
-
-`marvin.open_hands()`
+#### Open Gripp3r Claws
+This will open the Gripp3r's claws and lower them to the base of the robot.
+```python
+marvin = Robot()
+marvin.open_hands()
+```
 
 ### Ev3rStorm Specific Commands
 

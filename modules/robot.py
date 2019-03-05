@@ -14,6 +14,7 @@ try:
 except ImportError:
     print("Can't find ev3dev package")
 
+
 # Base class for controlling the Mindstorms
 class Robot:
     _left_track = "outB"
