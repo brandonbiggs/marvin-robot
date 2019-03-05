@@ -4,7 +4,7 @@ title: Getting Started
 nav_order: 2
 ---
 # Setup
-### Table of Contents
+## Table of Contents
 **[Contact Us](#contact-us)**<br>
 **[Prerequisites](#prerequisites)**<br>
 **[Windows Setup](#windows-setup)**<br>
@@ -15,7 +15,7 @@ nav_order: 2
 **[Programming](#programming-the-mindstorms)**<br>
 **[Helpful Resources](#helpful-resources)**<br>
 
-### Contact Us
+## Contact Us
 Visit Idaho State University’s [Computer Science Program](https://www.isu.edu/cs/) or our [outreach website](https://www2.cose.isu.edu/~bodipaul/outreach/).
 
 Visit [Dr. Paul Bodily’s](https://www2.cose.isu.edu/~bodipaul/) Academic Website
@@ -34,16 +34,13 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 2. Download and install [Visual Studio Code](https://code.visualstudio.com/download)
    * Visual Studio Code is a free code editor from microsoft. It’s like notepad but more powerful
    * This set up to allow programming with the Lego Mindstorm Robots. Any code editor will actually work, but this has a very helpful extension
+
 3. After Visual Studio Code is installed, open the program and click on “settings”, which is just an icon located in the bottom left corner, picture below.
 
    ![alt text][winsetup1]
 
-[winsetup1]: 
-        marvin-robot/docs/images/winsetup1.png
-       "Setup Image"
-
 4. Type “python” in the search bar and then click Python. It is the top link in this photo. Press “install”. It will be in the same location as “uninstall” in this photo.
-    <insert image here>
+    ![alt text][winsetup2]
 
 5. There should be a button that appears. You need to click “reload” to activate Python.
 
@@ -51,26 +48,29 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
    * Click the Settings Icon at the bottom of the left panel
    * Click command palette
    
-   <insert image here>
+   ![alt text][winsetup3]
 
    * A search box should appear. Type Python and select “Python: Select Interpreter”
+   
+   ![alt text][winsetup4]
+   
    * After you select “Python: Select Interpreter”, it should have another link that says “Python 3.7.2”. Click this as that is what we just installed in step 1.
 
 7. A box in the right hand corner should pop up called Python Linting. Click Install.
 
 8. This terminal should pop up at the bottom of the screen
 
-   <insert image here>
+   ![alt text][winsetup5]
 
 9. Next we need to install the EV3Dev-browser. This extension will allow us to interact directly with the Lego mindstorm robot
 
    * Click on “settings”, which is just an icon located in the bottom left corner, picture below.
  
-   <insert image here>
+   ![alt text][winsetup6]
  
    * In the search bar, type “ev3dev-browser”. You should now be able to install it. It looks like this
    
-   <insert image here>
+   ![alt text][winsetup7]
    
    * You will be prompted to reload after you press install. You should do this.
 
@@ -82,28 +82,32 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 
       - Type in the search bar “line end” and make sure that the top setting “Files: EOL” is set to “\n” pictured below.
     
-    <insert image here>
+    ![alt text][winsetup8]
 
 11. We should now done configuring your Windows computer for programming the Lego Mindstorm Robots!
 
-### Mac Setup
+## Mac Setup
 1. Download and install [Python 3.7.2](https://www.python.org/downloads/release/python-372/) 
+
    * You’ll want the macOS 64-bit installer
+
 2. Download and install [Visual Studio Code](https://code.visualstudio.com/download)
+
 3. Follow the Windows instructions for installing and configuring Visual Studio Code
 
-### Linux Setup
+## Linux Setup
 1. Install Python3 by using your favorite package manager or directly from the Python website
+
 2. Follow the Windows instructions for installing and configuring Visual Studio Code. Like mentioned in those instructions, you don’t have to use VS Code, we just recommend it since it has the nice ev3dev-browser extension.
 
-### ChromeOS Setup
+## ChromeOS Setup
 This hasn’t been tested, but should technically be possible with the newer chromebooks that have linux support with Crostini. If you would like to approach setting up everything to work with a chromebook, please email [biggbran@isu.edu](mailto:biggbran@isu.edu) and we can talk about how this might be possible.
 
-### Configuration
+## Configuration
 We have one more set of instructions before we can start programming the Lego Mindstorm Robots. We must configure our robots to allow for Python programming to work on them.
 1. Follow the [official documentation](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card) for installing the EV3dev image on a MicroSD card. You only need to follow steps 1-4. Any further than that may be helpful, but isn’t necessary
 
-### Programming the Mindstorms
+## Programming the Mindstorms
 It’s time to start programming the Lego Mindstorm Robots. Please make sure you’ve got your computer setup with Visual Studio Code, and your Lego Mindstorm is configured properly with a MicroSD card and the ev3dev linux image before you follow these 
 instructions.
 
@@ -125,13 +129,13 @@ instructions.
 
 6. Go to Settings in the bottom left corner and press “Command Palette” and type “Explore: Focus on ev3dev device browser view”. This will make a new window appear in the bottom left corner. It should look like this, except it will “Click here to connect to a device.
 
-<insert image>
+   ![alt text][programming-bots1]
 
 7. Press “Click here to connect to a device” and the search bar should appear. If you are connecting the mindstorm to your computer via USB, it may appear as “Ethernet”.
 
 8. Once you have connected, you will now see this in the device browse
 
-<insert image>
+   ![alt text][programming-bots1]
 
 9. Hover your mouse over EV3DEV Device Browser grey title bar and click the “send project to device” button. It looks like a download button. This should take just a second. This is transferring files from your computer to the Mindstorm robot. You will get a confirmation in the bottom left once it’s completed.
 
@@ -154,4 +158,40 @@ instructions.
 
 * [Selecting a python interpreter](https://code.visualstudio.com/docs/python/environments) 
 
-* [Ev3dev-browser information](https://marketplace.visualstudio.com/items?itemName=dlech.ev3dev-browser) 
+* [Ev3dev-browser information](https://marketplace.visualstudio.com/items?itemName=dlech.ev3dev-browser)
+
+[winsetup1]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup1.png
+       "Visual Studio Code Main Menu"
+       
+[winsetup2]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup2.png
+       "Visual Studio Code Main Menu" 
+
+[winsetup3]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup3.png
+       "Visual Studio Code Main Menu" 
+
+[winsetup4]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup4.png
+       "Visual Studio Code Main Menu" 
+
+[winsetup5]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup5.png
+       "Visual Studio Code Main Menu" 
+
+[winsetup6]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup6.png
+       "Visual Studio Code Main Menu" 
+
+[winsetup7]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup7.png
+       "Visual Studio Code Main Menu" 
+       
+[winsetup8]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup8.png
+       "Visual Studio Code Main Menu" 
+
+[programming-bots1]: 
+        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/programming-bots1.png
+       "Visual Studio Code Main Menu" 
