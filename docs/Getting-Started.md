@@ -37,10 +37,12 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 
 3. After Visual Studio Code is installed, open the program and click on “settings”, which is just an icon located in the bottom left corner, picture below.
 
-   ![alt text][winsetup1]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup1.png)
+       "Visual Studio Code Main Menu"
 
 4. Type “python” in the search bar and then click Python. It is the top link in this photo. Press “install”. It will be in the same location as “uninstall” in this photo.
-    ![alt text][winsetup2]
+    ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup2.png
+       "Visual Studio Code Main Menu" )
 
 5. There should be a button that appears. You need to click “reload” to activate Python.
 
@@ -48,11 +50,13 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
    * Click the Settings Icon at the bottom of the left panel
    * Click command palette
    
-   ![alt text][winsetup3]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup3.png
+       "Visual Studio Code Main Menu" )
 
    * A search box should appear. Type Python and select “Python: Select Interpreter”
    
-   ![alt text][winsetup4]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup4.png
+       "Visual Studio Code Main Menu" )
    
    * After you select “Python: Select Interpreter”, it should have another link that says “Python 3.7.2”. Click this as that is what we just installed in step 1.
 
@@ -60,17 +64,20 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 
 8. This terminal should pop up at the bottom of the screen
 
-   ![alt text][winsetup5]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup5.png
+       "Visual Studio Code Main Menu" )
 
 9. Next we need to install the EV3Dev-browser. This extension will allow us to interact directly with the Lego mindstorm robot
 
    * Click on “settings”, which is just an icon located in the bottom left corner, picture below.
  
-   ![alt text][winsetup6]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup6.png
+       "Visual Studio Code Main Menu")
  
    * In the search bar, type “ev3dev-browser”. You should now be able to install it. It looks like this
    
-   ![alt text][winsetup7]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup7.png
+       "Visual Studio Code Main Menu")
    
    * You will be prompted to reload after you press install. You should do this.
 
@@ -82,7 +89,8 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 
       - Type in the search bar “line end” and make sure that the top setting “Files: EOL” is set to “\n” pictured below.
     
-    ![alt text][winsetup8]
+    ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup8.png
+       "Visual Studio Code Main Menu" )
 
 11. We should now done configuring your Windows computer for programming the Lego Mindstorm Robots!
 
@@ -129,13 +137,15 @@ instructions.
 
 6. Go to Settings in the bottom left corner and press “Command Palette” and type “Explore: Focus on ev3dev device browser view”. This will make a new window appear in the bottom left corner. It should look like this, except it will “Click here to connect to a device.
 
-   ![alt text][programming-bots1]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/programming-bots1.png
+       "Display of EV3 Device Browser")
 
 7. Press “Click here to connect to a device” and the search bar should appear. If you are connecting the mindstorm to your computer via USB, it may appear as “Ethernet”.
 
 8. Once you have connected, you will now see this in the device browse
 
-   ![alt text][programming-bots1]
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/programming-bots1.png
+       "Display of EV3 Device Browser")
 
 9. Hover your mouse over EV3DEV Device Browser grey title bar and click the “send project to device” button. It looks like a download button. This should take just a second. This is transferring files from your computer to the Mindstorm robot. You will get a confirmation in the bottom left once it’s completed.
 
@@ -159,39 +169,3 @@ instructions.
 * [Selecting a python interpreter](https://code.visualstudio.com/docs/python/environments) 
 
 * [Ev3dev-browser information](https://marketplace.visualstudio.com/items?itemName=dlech.ev3dev-browser)
-
-[winsetup1]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup1.png
-       "Visual Studio Code Main Menu"
-       
-[winsetup2]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup2.png
-       "Visual Studio Code Main Menu" 
-
-[winsetup3]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup3.png
-       "Visual Studio Code Main Menu" 
-
-[winsetup4]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup4.png
-       "Visual Studio Code Main Menu" 
-
-[winsetup5]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup5.png
-       "Visual Studio Code Main Menu" 
-
-[winsetup6]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup6.png
-       "Visual Studio Code Main Menu" 
-
-[winsetup7]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup7.png
-       "Visual Studio Code Main Menu" 
-       
-[winsetup8]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup8.png
-       "Visual Studio Code Main Menu" 
-
-[programming-bots1]: 
-        https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/programming-bots1.png
-       "Visual Studio Code Main Menu" 
