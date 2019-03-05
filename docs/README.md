@@ -1,5 +1,8 @@
 # Marvin: The Lego MindStorm Robot Wrapper
 
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/lego_robots.jpg
+       "Lego Mindstorm Robots")
+
 Mindstorm LEGO robots are a fun and interactive way for beginners to experience the excitement and challenges of programming. Originally designed with a graphical user interface for those, we are designing an augmented tutorial the teach students to program the robots using the Python programming language. In the margin are links to step-by-step video and written tutorials on how to get started with both the graphical and Python interfaces.
 
 This is an incredibly simplified wrapper for the 
