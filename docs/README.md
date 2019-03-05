@@ -20,6 +20,13 @@ Python Package which we our wrapper is written on top of
 
 * **Brandon Biggs** - *Initial work* - [Github](https://github.com/brandonbiggs/)
 
+## Contact Us
+Visit Idaho State University’s [Computer Science Program](https://www.isu.edu/cs/) or our [outreach website](https://www2.cose.isu.edu/~bodipaul/outreach/).
+
+Visit [Dr. Paul Bodily’s](https://www2.cose.isu.edu/~bodipaul/) Academic Website
+
+This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu), Katie Wilsdon, and [Dr. Bodily](mailto:bodipaul@isu.edu).
+
 ## Acknowledgments
 
 * EV3Dev OS and Python Package Team. Without them, this wouldn't be possible

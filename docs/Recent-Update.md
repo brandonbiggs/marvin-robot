@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Customization
+title: Recent Updates
 nav_order: 5
 ---
 

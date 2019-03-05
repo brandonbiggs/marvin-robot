@@ -5,7 +5,6 @@ nav_order: 2
 ---
 # Setup
 ## Table of Contents
-**[Contact Us](#contact-us)**<br>
 **[Prerequisites](#prerequisites)**<br>
 **[Windows Setup](#windows-setup)**<br>
 **[Mac Setup](#mac-setup)**<br>
@@ -14,13 +13,6 @@ nav_order: 2
 **[Configuration](#configuration)**<br>
 **[Programming](#programming-the-mindstorms)**<br>
 **[Helpful Resources](#helpful-resources)**<br>
-
-## Contact Us
-Visit Idaho State University’s [Computer Science Program](https://www.isu.edu/cs/) or our [outreach website](https://www2.cose.isu.edu/~bodipaul/outreach/).
-
-Visit [Dr. Paul Bodily’s](https://www2.cose.isu.edu/~bodipaul/) Academic Website
-
-This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu), Katie Wilsdon, and [Dr. Bodily](mailto:bodipaul@isu.edu).
 
 ## Prerequisites
 1. Computer with an internet connection for installing and configuring several pieces of software
@@ -37,8 +29,8 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 
 3. After Visual Studio Code is installed, open the program and click on “settings”, which is just an icon located in the bottom left corner, picture below.
 
-   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup1.png)
-       "Visual Studio Code Main Menu"
+   ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup1.png
+       "Visual Studio Code Main Menu")
 
 4. Type “python” in the search bar and then click Python. It is the top link in this photo. Press “install”. It will be in the same location as “uninstall” in this photo.
     ![alt text](https://raw.githubusercontent.com/brandonbiggs/marvin-robot/master/docs/images/winsetup2.png
@@ -153,7 +145,7 @@ instructions.
 
 11. Once you can execute your program on your Mindstorm, you can now edit “robot.py” to change what your mindstorm will do. After making changes, repeat steps 9-11. Good luck!
 
-### Helpful Resources
+## Helpful Resources
 * You may find many different tutorials out there. The only thing that we change from most tutorials is that we use a custom Python programming wrapper to make programming the Lego Mindstorms much easier. Experienced programmers should be able to use any code tutorials out there, we just recommend ours to help even the most inexperienced programmers.
 
 * List of all available commands that can be ran using our wrapper can be found on the Github readme page
