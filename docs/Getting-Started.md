@@ -14,8 +14,6 @@ nav_order: 2
 **[Configuration](#configuration)**<br>
 **[Programming](#programming-the-mindstorms)**<br>
 **[Helpful Resources](#helpful-resources)**<br>
- 
-<Move the google doc setup to here eventually..>
 
 ### Contact Us
 Visit Idaho State University’s [Computer Science Program](https://www.isu.edu/cs/) or our [outreach website](https://www2.cose.isu.edu/~bodipaul/outreach/).
@@ -24,13 +22,13 @@ Visit [Dr. Paul Bodily’s](https://www2.cose.isu.edu/~bodipaul/) Academic Websi
 
 This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu), Katie Wilsdon, and [Dr. Bodily](mailto:bodipaul@isu.edu).
 
-### Prerequisites
+## Prerequisites
 1. Computer with an internet connection for installing and configuring several pieces of software
 2. [EV3 Lego Mindstorm Robot](https://wwwsecure.eu.lego.com/en-us/mindstorms/build-a-robot)  
    * Currently we have tested this with the Gripp3r and Ev3rstorm
 3. MicroSD Card that is not bigger than 32GBs
 
-### Windows Setup
+## Windows Setup
 1. Download and install [Python 3.7.2](https://www.python.org/downloads/)
    * Windows x86-64 executable installer
 2. Download and install [Visual Studio Code](https://code.visualstudio.com/download)
@@ -38,7 +36,11 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
    * This set up to allow programming with the Lego Mindstorm Robots. Any code editor will actually work, but this has a very helpful extension
 3. After Visual Studio Code is installed, open the program and click on “settings”, which is just an icon located in the bottom left corner, picture below.
 
-   <insert image here>
+   ![alt text][winsetup1]
+
+[winsetup1]: 
+        marvin-robot/docs/images/winsetup1.png
+       "Setup Image"
 
 4. Type “python” in the search bar and then click Python. It is the top link in this photo. Press “install”. It will be in the same location as “uninstall” in this photo.
     <insert image here>
