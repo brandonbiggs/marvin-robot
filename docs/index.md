@@ -20,7 +20,7 @@ Currently applicable to all Mindstorms that are using the ev3dev linux
 operating system, but only has features for the Ev3rstorm and Gripp3r 
 Mindstorms, which we call Optimus and Marvin respectively.
 
-[Download Package](){: .btn .btn-blue }
+[Download Package](https://github.com/brandonbiggs/marvin-robot/raw/master/marvin-wrapper.zip){: .btn .btn-blue }
 
 ## Built With
 
