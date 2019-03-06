@@ -111,7 +111,7 @@ class Robot:
 
 
 # Added a unique class for the Ev3rstorm Mindstorm. Inherits from Robot class
-class Optimus(Robot):
+class Everstorm(Robot):
 
     # This just spins the little thing in the arm. Not sure of the purpose of this yet
     _left_arm = "OutA"
@@ -121,7 +121,7 @@ class Optimus(Robot):
 
     @staticmethod
     def _help():
-        method_list = [func for func in dir(Optimus) if callable(getattr(Optimus, func)) and not func.startswith("_")]
+        method_list = [func for func in dir(Everstorm) if callable(getattr(Everstorm, func)) and not func.startswith("_")]
         print(method_list)
 
     def turn(self, direction, degrees=90, seconds=1, speed=6):
@@ -131,7 +131,7 @@ class Optimus(Robot):
 
 
 # Added a unique class for the Gripp3r Mindstorm. Inherits from the Robot Class
-class Marvin(Robot):
+class Gripper(Robot):
     # Constants
     _gripper_motor = "outA"
 
@@ -141,7 +141,7 @@ class Marvin(Robot):
 
     @staticmethod
     def _help():
-        method_list = [func for func in dir(Marvin) if callable(getattr(Marvin, func)) and not func.startswith("_")]
+        method_list = [func for func in dir(Gripper) if callable(getattr(Gripper, func)) and not func.startswith("_")]
         print(method_list)
 
     # Opens Grippers
@@ -165,7 +165,16 @@ class Marvin(Robot):
         seconds = degree_factor * degrees * seconds
         Robot._turn(self, direction, speed, seconds)
 
-    # TODO - Not yet ready to be implemented.
-    @staticmethod
-    def _shoot_ball():
-        print("Not yet defined!")
+
+# Class for Gripper just in case someone still wants to call it Marvin
+# TODO - Test
+class Marvin(Gripper):
+    def __init__(self, gripper_motor="outA", left_track="outB", right_track="outC"):
+        Gripper.__init__(self, left_track, right_track)
+
+
+# Class for Everstorm just in case someone still wants to call it Optimus
+# TODO - Test
+class Optimus(Everstorm):
+    def __init__(self):
+        Everstorm.__init__(self)
