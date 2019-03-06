@@ -5,19 +5,21 @@ nav_order: 3
 ---
 ## Programming the Mindstorms
 It’s time to start programming the Lego Mindstorm Robots. Please make sure you’ve got your computer setup with Visual Studio Code, and your Lego Mindstorm is configured properly with a MicroSD card and the ev3dev linux image before you follow these 
-instructions.
+instructions. These instructions can be found on our Getting Started page.
 
 1. **Turn on the robot**. Turn on the mindstorm robot by pressing the center button
 
-2. Get the code. Download our [Marvin ev3 wrapper](https://github.com/brandonbiggs/marvin-robot/blob/master/marvin-wrapper.zip) from Github
-   * This will take you straight to the zip file that you can use without anything else. You’re welcome to download the rest of the project, but most if it will be very unnecessary.
+2. Get the code. Download our [Marvin ev3 wrapper](https://github.com/brandonbiggs/marvin-robot/raw/master/marvin-wrapper.zip) from Github
+   * This will download the zip file that you can use without anything else. You’re welcome to download the rest of the project, but most if it will be very unnecessary.
 
 3. Unpackage the code. Unzip the “marvin-wrapper.zip” folder that you just downloaded.
-   * This can usually be done by right clicking and pressing “unzip” or “extract”. It changes depending on what operating system you’re using.
+   * Unzipping can usually be done by right clicking and pressing “unzip” or “extract”. It changes depending on what operating system you’re using.
    * If you are unable to find a method to unzip/extract the folder, download and install the [program "7Zip"](https://www.7-zip.org/) that should make it very easy for you, and will give you a new 7zip option when you right click on the zipped folder
 
-4. Open the code. Open Visual Studio Code, click “File” in the upper right hand corner, and then click “Open folder” from the new dropdown. You should then find and open the “marvin-wrapper” folder.
-   * You should now see a file called “robot.py” and a folder called “modules”. “Robot.py” is what we care about editing and where our code will go for making the Mindstorms run. Modules is just some code that helps robot.py work.
+4. Open Visual Studio Code, click “File” in the upper right hand corner, and then click “Open folder” from the new dropdown. You should then find and open the “marvin-wrapper” folder. You should now see several files. 
+   * One is called “application.py”. This is where you should put your code. 
+   * Another will be called "examples.py". This is where you will find code examples similar to the examples on our website.
+    * A folder called “modules”. Modules is some code that helps application.py and examples.py work. You can ignore this file.
 
 5. Connect to the robot. Connect the mindstorm to your computer via USB, bluetooth, or wifi.
    * If you are using USB to connect your mindstorm to your computer, you don’t need to do any configuring on the robot. USB is the easiest, but least flexible method of connecting.

@@ -5,11 +5,12 @@ nav_order: 4
 ---
 # Full Reference
 
-This reference list should provide you with fully runnable examples of how to use each command to control your Lego Mindstorm. 
+This reference list should provide you with fully executable examples of how to use each command to control your Lego Mindstorm. 
 
-- You **do not** need to use the `from modules.robot import*` command after each script. That will only need to be used once at the top of your file. The same can be said for your creation of robot with the line `robot = Robot()`. 
+- You **do not** need to use the `from modules.robot import *` command after each script. That will only need to be used once at the top of your file. The same can be said for your creation of robot with the line `robot = Robot()`. 
 - **Do not** copy the line that starts with `#>` in the examples. That is just an example of what is output after the commands are ran.
 - Each robot can execute all of the commands **not** listed in the specific robot command section. Example - The Ev3rstorm cannot use the Gripp3r commands to open or close hands. But both can use `print_to_screen` or `speak`.
+
 ### Table of Contents
 **[Print](#print)**<br>
 **[Speak](#speak)**<br>

@@ -5,16 +5,15 @@ nav_order: 5
 ---
 
 ## Examples:
-There is sample code in robot.py. 
+There is other sample code in examples.py. 
 
-The following 4 lines will move the mindstorm robot forward, have it say 
+The following 5 lines will move the mindstorm robot forward, have it say 
 "Hello world" and then move back to it's original starting point. 
-The purpose here is to demonstrate what programming can do, while doing so 
-in as few lines as possible. 
 
 ```
-marvin = Marvin()
-marvin.moveForward(7, 7)
-marvin.speak("Hello world!")
-marvin.moveBackward(7,7)
+from modules.robot import *
+robot = Robot()
+robot.moveForward(7, 7)
+robot.speak("Hello world!")
+robot.moveBackward(7,7)
 ```
