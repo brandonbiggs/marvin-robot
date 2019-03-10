@@ -110,28 +110,16 @@ robot.speak("Put whatever you want inside these quotes!")
 ```
 
 ### Move Forward
-TODO - This will be improved soon
-```
-from modules.robot import *
-robot = Robot()
-robot.move_forward()
-```
+Coming soon
+{: .label .label-yellow }
 
 ### Moves Backward
-TODO - This will be improved soon
-```
-from modules.robot import *
-robot = Robot()
-robot.move_backward()
-```
+Coming soon
+{: .label .label-yellow }
 
 ### Turning
-TODO - This will be improved soon
-```
-from modules.robot import *
-robot = Robot()
-robot.turn()
-```
+Coming soon
+{: .label .label-yellow }
 
 ### Wait
 This command will pause the robot for 5 seconds.
@@ -210,10 +198,12 @@ robot.robot.set_button_colors(color="orange", button="right", brightness=50)
 ```
 
 ### Write Song
-TODO
+Coming soon
+{: .label .label-yellow }
 
 ### Write Tune
-TODO
+Coming soon
+{: .label .label-yellow }
 
 ### Play Random Song
 The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
