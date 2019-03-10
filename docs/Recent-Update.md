@@ -5,6 +5,16 @@ nav_order: 5
 ---
 
 ## Recent Features
+
+### March 10th Update
+- Absolutely gigantic update
+- Lots and lots of error checking in the code. Hopefully this removes most of the bugs that people may have had. Combining these changes along with the Python syntax checking, things should be in good shape in terms of possible bugs. This isn't the case for movement just yet, but we're working on that. Should have an update for that tomorrow.
+- New Features! Beeping, songs, tunes, LEDs, volume control are all now available. See "full-reference" for more information about all of these.
+- Unit testing is in the works. I've never really implemented unit testing before, so it could be really wrong. Feel free to laugh, but let me know how I can improve it.
+- Documentation updates - not just with new features. Updated documentation to go along with old features as well.
+- Debug Mode! You can now pass a parameter on init of robot to enter debug mode. This will print lots of output on the computer when attempting to run commands. Don't run this on the robots however.
+- Movement updates coming soon. I've made lots of progress on this, even if the code doesn't reflect it yet. I believe I know how to get turning and distance moving setup quite nicely.
+
 ### March 6th Update
 - Documentation has been moved from Google Doc to this site and has been expanded significantly. Hopefully things will be a bit easier from here on out.
 - There are now 5 classes, 3 of which are important.

@@ -12,16 +12,45 @@ This reference list should provide you with fully executable examples of how to 
 - Each robot can execute all of the commands **not** listed in the specific robot command section. Example - The Ev3rstorm cannot use the Gripp3r commands to open or close hands. But both can use `print_to_screen` or `speak`.
 
 ### Table of Contents
+**[Class Instantiation](#class-instantiation)**<br>
+**[Beep](#beep)**<br>
+**[Button Colors](#button-colors)**<br>
+**[Move Forward - TODO](#move-forward)**<br>
+**[Move Backward - TODO](#moves-backward)**<br>
+**[Play Random Songs](#play-random-song)**<br>
+**[Play Random Tones](#play-random-tone)**<br>
 **[Print](#print)**<br>
+**[Set Volume](#set-volume)**<br>
 **[Speak](#speak)**<br>
-**[Move Forward](#move-forward)**<br>
-**[Move Backward](#moves-backward)**<br>
+**[Turning - TODO](#turning)**<br>
 **[Wait](#wait)**<br>
+**[Write Song - TODO](#write-song)**<br>
+**[Write Tune - TODO](#write-tune)**<br>
 **[Gripp3r Specific](#gripp3r-specific-commands)**<br>
 **[Ev3rstorm Specific](#ev3rstorm-specific-commands)**<br>
 
 ### Class Instantiation
-Todo - Document the instantiation
+By default, the class is very straightforward to instantiate.
+```
+from modules.robot import *
+robot = Robot()
+#> You know have a robot object!
+```
+
+There are several parameters you can pass to it however. Right now the ones that are useful are: `left_track`, `right_track`, and `debug`. The two track parameters allow you to change the motors which your Lego Mindstorms may be using. By default `left_track` is set to "outB" and `right_track` is set to "outC". These were just the defaults for the Mindstorms we used. If your robot has them set differently, instantiate the class like the following, where `outX` and `outY` are the proper motors for each left and right track.
+```
+from modules.robot import *
+robot = Robot(left_track="outX", right_track="outY")
+#> You know have a robot object with different motors set for each track
+```
+
+You can also enable debug mode. **Do not** enable this when running code on the robot. This is useful if you are testing the code on your computer. This should allow you to run everything as you would normally with the robot, with printed output of what would happen on your computer. This allows for checking of commands and whatnot. 
+
+```
+from modules.robot import *
+robot = Robot(debug=True)
+#> You are now in debug mode. Commands will run on your computer, but not on the robot.
+```
 
 ### Print
 This will allow you to print to your Lego Mindstorm's screen.
@@ -44,7 +73,7 @@ robot.print_to_screen("Put whatever you want inside these quotes!")
 ```
 
 ### Set Volume
-You can change the speaker volume of the Lego Mindstorm. The volume is a percent between 0 and 100 where 0 is no sound and 100 is max. By default, this command will set the volume at 80%. The volume is not very loud on these, so 100% isn't too terrible to hear.
+You can change the speaker volume of the Lego Mindstorm. The volume is a percent between 0 and 100 where 0 is no sound and 100 is max. By default, this command will set the volume at 80%. The volume is not very loud on these, so 100% isn't too terrible to hear. This only works for the speak command. Does not affect the beeps or tone commands.
 ```
 from modules.robot import *
 robot = Robot()
@@ -96,6 +125,14 @@ robot = Robot()
 robot.move_backward()
 ```
 
+### Turning
+TODO - This will be improved soon
+```
+from modules.robot import *
+robot = Robot()
+robot.turn()
+```
+
 ### Wait
 This command will pause the robot for 5 seconds.
 ```
@@ -138,6 +175,7 @@ robot = Robot()
 robot.beep(300, override=True)
 #> 300 beeps will emit from the robots speaker
 ```
+
 ### Button Colors
 You can change the LED colors of two buttons on the Mindstorm controller. By default, the left button is set to be green.
 ```
@@ -170,6 +208,7 @@ robot = Robot()
 robot.robot.set_button_colors(color="orange", button="right", brightness=50)
 #> The right button will be set to orange with brightness set to 50%
 ```
+
 ### Write Song
 TODO
 
@@ -187,12 +226,10 @@ robot.sing_random_song(length="short")
 #> Random song will be selected and played
 ```
 
-### Play Tone
+### Play Random Tone
 The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
 
 The robot has the ability to play a random tune using a series of different sounding tunes. There are several predefined tunes that have been written already for you.
-
-
 
 ## Gripp3r Specific Commands
 These commands can only be run on the Gripp3r Lego Mindstorm.

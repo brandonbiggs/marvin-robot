@@ -43,3 +43,4 @@ This documentation was put together by [Brandon Biggs](mailto:biggbran@isu.edu),
 ## Acknowledgments
 
 * EV3Dev OS and Python Package Team. Without them, this wouldn't be possible
+* Jakob Meng for helping me get the motors figured out. Appreciate the help buddy. Glad an ME and a CS student can work together.

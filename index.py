@@ -10,7 +10,11 @@ from modules.robot import *
 
 robot = Robot()
 robot.print_to_screen(statement="Print test to screen!")
+robot.set_volume(100)
 robot.speak(statement="Hello. I am Marvin. Nice to meet you!")
+robot.beep(5)
+robot.set_button_colors(color="yellow", button="left", brightness=100)
+robot.sing_random_song()
 robot.move_backward(seconds_to_move=3, speed=5)
 robot.move_forward(seconds_to_move=3, speed=5)
 robot.wait(seconds=5)

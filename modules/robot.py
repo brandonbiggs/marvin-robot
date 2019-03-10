@@ -119,7 +119,6 @@ class Robot:
         # A full list of fonts can be found with `ls /usr/share/consolefonts`
         os.system('setfont ' + name)
 
-    # TODO - Test on robot
     # Produces a beep
     def beep(self, number_of_beeps=1, override=False):
         # Ensures that beeps is an int
@@ -151,9 +150,8 @@ class Robot:
             print("DEBUG: Number of beeps:", number_of_beeps)
         else:
             for _ in range(number_of_beeps):
-                ev3.Sound.beep()
+                ev3.Sound.beep().wait()
 
-    # TODO - Test with Robot
     # Plays a random short or long Tone
     def play_random_tone(self, length="long"):
         # Clean up length stream just in case
@@ -185,10 +183,10 @@ class Robot:
             if self._DEBUG:
                 print("DEBUG: Invalid input.")
                 print("DEBUG: Playing first short tone.")
-            # else:
+            else:
+                self.speak("Sorry, I don't understand the length input of " + length)
             # ev3.Sound.tone(self._short_tones[0])
 
-    # TODO - Test on robot
     # Prints to the Mindstorm screen
     def print_to_screen(self, statement="Hello everyone!"):
         # Ensures statement is string
@@ -209,7 +207,6 @@ class Robot:
             # Sleeps the terminal
             time.sleep(5)
 
-    # TODO - Test on robot
     # Sets colors of robots buttons
     def set_button_colors(self, color="green", button="left", brightness=100):
         # All possible Color Objects
@@ -301,8 +298,7 @@ class Robot:
             # Finally set colors
             ev3.Leds.set_color(ev3_button, ev3_color, brightness)
 
-    # TODO - Test on robot
-    # Set volume of robot speaker
+    # Set volume of robot speaker - Doesn't work for song or tones yet
     def set_volume(self, volume=80):
         # Ensures volume is an int
         if type(volume) is not int:
@@ -330,7 +326,6 @@ class Robot:
         else:
             ev3.Sound.set_volume(volume)
 
-    # TODO - Test with Robot
     # Plays a random short or long song
     def sing_random_song(self, length="short"):
         length = str(length)
@@ -344,23 +339,25 @@ class Robot:
             if self._DEBUG:
                 print("DEBUG: Short song selected.")
             else:
-                ev3.Sound.play_song(self._short_songs[random_number])
+                self.speak("Playing random short song.")
+                ev3.Sound.play_song(self._short_songs[random_number]).wait()
         # Play a random long song
         elif length == "long":
             random_number = random.randint(0, (len(self._long_songs) - 1))
             if self._DEBUG:
                 print("DEBUG: Long song selected.")
             else:
-                ev3.Sound.play_song(self._long_songs[random_number])
+                self.speak("Playing random long song.")
+                ev3.Sound.play_song(self._long_songs[random_number]).wait()
         # Play the first short song if the parameter is wrong
         else:
             if self._DEBUG:
                 print("DEBUG: Invalid length.")
                 print("DEBUG: Playing first short song.")
             else:
-                ev3.Sound.play_song(self._short_songs[0])
+                self.speak("I don't understand the length requested. Playing random short song.")
+                ev3.Sound.play_song(self._short_songs[0]).wait()
 
-    # TODO - Test on robot
     # Outputs the statement through the mindstorm speaker
     def speak(self, statement="Hello. I am Marvin. Nice to meet you."):
         # Ensure that statement is a string
@@ -372,7 +369,6 @@ class Robot:
         else:
             ev3.Sound.speak(statement).wait()
 
-    # TODO - Test on robot
     # Set wait time
     def wait(self, seconds=5):
         # Ensures that seconds is int
