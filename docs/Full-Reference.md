@@ -20,6 +20,8 @@ This reference list should provide you with fully executable examples of how to 
 **[Gripp3r Specific](#gripp3r-specific-commands)**<br>
 **[Ev3rstorm Specific](#ev3rstorm-specific-commands)**<br>
 
+### Class Instantiation
+Todo - Document the instantiation
 
 ### Print
 This will allow you to print to your Lego Mindstorm's screen.
@@ -39,6 +41,23 @@ from modules.robot import *
 robot = Robot()
 robot.print_to_screen("Put whatever you want inside these quotes!")
 #> Put whatever you want inside these quotes!
+```
+
+### Set Volume
+You can change the speaker volume of the Lego Mindstorm. The volume is a percent between 0 and 100 where 0 is no sound and 100 is max. By default, this command will set the volume at 80%. The volume is not very loud on these, so 100% isn't too terrible to hear.
+```
+from modules.robot import *
+robot = Robot()
+robot.set_volume()
+#> Volume of speaker will be set to 80%
+```
+
+Set the volume to whatever you'd like.
+```
+from modules.robot import *
+robot = Robot()
+robot.set_volume(100)
+#> Volume of speaker will be set to 100%
 ```
 
 ### Speak
@@ -94,6 +113,86 @@ robot = Robot()
 robot.wait(seconds=10)
 #> 10 second pause
 ```
+
+### Beep
+The robot can beep at you with a simple command.
+```
+from modules.robot import *
+robot = Robot()
+robot.beep()
+#> One beep will emit from the robots speaker
+```
+
+The number of beeps can be between 0 and 15.
+```
+from modules.robot import *
+robot = Robot()
+robot.beep(15)
+#> 15 beeps will emit from the robots speaker
+```
+
+If you want more than 15 beeps, you can override the 15 beep limit. If this was a mistake, you can stop the robot by pressing the center button on the robot.
+```
+from modules.robot import *
+robot = Robot()
+robot.beep(300, override=True)
+#> 300 beeps will emit from the robots speaker
+```
+### Button Colors
+You can change the LED colors of two buttons on the Mindstorm controller. By default, the left button is set to be green.
+```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors()
+#> The left button will be set to green
+```
+
+You are able to use the following colors: 'black', 'red', 'green', 'amber', 'orange', 'yellow'. Just set the parameter to any of these colors.
+ ```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors(color="orange")
+#> The left button will be set to orange
+```
+
+You can specify the right button as well.
+ ```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors(color="orange", button="right")
+#> The right button will be set to orange
+```
+
+You may also specify a brightness percentage from 0 to 100, using the last parameter `brightness`.
+ ```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors(color="orange", button="right", brightness=50)
+#> The right button will be set to orange with brightness set to 50%
+```
+### Write Song
+TODO
+
+### Write Tune
+TODO
+
+### Play Random Song
+The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
+
+The robot has the ability to play a song using a series of beeps. There are several predefined songs that have been written already for you. To select a random song, use this command, with length being set to either `short` or `long`. The short parameter will play a relatively short song, while the long parameter will play a slightly longer song.
+```
+from modules.robot import *
+robot = Robot()
+robot.sing_random_song(length="short")
+#> Random song will be selected and played
+```
+
+### Play Tone
+The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
+
+The robot has the ability to play a random tune using a series of different sounding tunes. There are several predefined tunes that have been written already for you.
+
+
 
 ## Gripp3r Specific Commands
 These commands can only be run on the Gripp3r Lego Mindstorm.
