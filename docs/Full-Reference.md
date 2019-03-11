@@ -10,19 +10,27 @@ This reference list should provide you with fully executable examples of how to 
 - You **do not** need to use the `from modules.robot import *` command after each script. That will only need to be used once at the top of your file. The same can be said for your creation of robot with the line `robot = Robot()`. 
 - **Do not** copy the line that starts with `#>` in the examples. That is just an example of what is output after the commands are ran.
 - Each robot can execute all of the commands **not** listed in the specific robot command section. Example - The Ev3rstorm cannot use the Gripp3r commands to open or close hands. But both can use `print_to_screen` or `speak`.
+- Once your robot gets to ~20% battery life, once you run a command on the robot, it will tell you that the battery is getting low. This doesn't mean you have to change the batteries, but your results may differ from that of a robot with full batteries.
+- Every command should have an explanation command. If you run the command, you should get an explanation of the code. Example
+```
+from modules.robot import *
+robot = Robot()
+print(robot.beep.__doc__)
+```
+will print out an explanation of the function on your computer.
 
-### Table of Contents
+## Table of Contents
 **[Class Instantiation](#class-instantiation)**<br>
 **[Beep](#beep)**<br>
 **[Button Colors](#button-colors)**<br>
-**[Move Forward - TODO](#move-forward)**<br>
-**[Move Backward - TODO](#moves-backward)**<br>
+**[Move Forward](#move-forward)**<br>
+**[Move Backward](#moves-backward)**<br>
 **[Play Random Songs](#play-random-song)**<br>
 **[Play Random Tones](#play-random-tone)**<br>
 **[Print](#print)**<br>
 **[Set Volume](#set-volume)**<br>
 **[Speak](#speak)**<br>
-**[Turning - TODO](#turning)**<br>
+**[Turning](#turning)**<br>
 **[Wait](#wait)**<br>
 **[Write Song - TODO](#write-song)**<br>
 **[Write Tune - TODO](#write-tune)**<br>
@@ -110,16 +118,148 @@ robot.speak("Put whatever you want inside these quotes!")
 ```
 
 ### Move Forward
-Coming soon
-{: .label .label-yellow }
+The move forward command allows the robot to move forward however many feet you want it to. There are a couple of settings to make it more powerful, but by default, the `move_forward()` command will move the robot forward one foot.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_forward()
+#> The robot will move forward 1 foot
+```
+
+You can change the number of feet and have the robot move forward more than a foot, but no more than 15 feet.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_forward(distance_in_feet=5.5)
+#> The robot will move forward 5.5 feet
+```
+
+You can also increase the speed in which your robot moves. By default, it will move at speed 3. This is the most tested speed. Any other speed may have some varied output. The speed is a number between 1 and 10.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_forward(speed=7)
+#> The robot will move forward 1 foot at speed 7.
+```
+
+In the initial explanation of `distance_in_feet` I specified that there is a cap of 15 feet. This is to ensure there isn't a typo from the user. If you really want the robot to move more than 15 feet in one command, use the `override=True` parameter.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_forward(distance_in_feet=30, override=True)
+#> The robot will move forward 30 feet at default speed.
+```
+
+This can all be put together by specifying each of the commands as parameters.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_forward(distance_in_feet=30, speed=8, override=True)
+#> The robot will move forward 30 feet at speed 8.
+```
+
+There is one more **very** advanced feature. This is not needed most of the time. You can specify a `surface_factor`. This is usually a small +/- integer that helps account for surface slowdown or speedup. Distance and speed were measured on a hard surface, but a carpet surface may change how far the robot is moving. If the robot isn't moving quite as far on a surface as on another surface, pass a small positive number, such as 10, to the move forward command.
+
+```
+from modules.robot import *
+robot = Robot()
+robot.move_forward(surface_factor=10)
+#> The robot will move forward approximately 1 foot using a small surface factor.
+```
 
 ### Moves Backward
-Coming soon
-{: .label .label-yellow }
+The move backward command allows the robot to move backward however many feet you want it to. There are a couple of settings to make it more powerful, but by default, the `move_backward()` command will move the robot backward one foot.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_backward()
+#> The robot will move backward 1 foot
+```
+
+You can change the number of feet and have the robot move backward more than a foot, but no more than 15 feet.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_backward(distance_in_feet=5.5)
+#> The robot will move backward 5.5 feet
+```
+
+You can also increase the speed in which your robot moves. By default, it will move at speed 3. This is the most tested speed. Any other speed may have some varied output. The speed is a number between 1 and 10.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_backward(speed=7)
+#> The robot will move backward 1 foot at speed 7.
+```
+
+In the initial explanation of `distance_in_feet` I specified that there is a cap of 15 feet. This is to ensure there isn't a typo from the user. If you really want the robot to move more than 15 feet in one command, use the `override=True` parameter.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_backward(distance_in_feet=30, override=True)
+#> The robot will move backward 30 feet at default speed.
+```
+
+This can all be put together by specifying each of the commands as parameters.
+```
+from modules.robot import *
+robot = Robot()
+robot.move_backward(distance_in_feet=30, speed=8, override=True)
+#> The robot will move backward 30 feet at speed 8.
+```
+
+There is one more **very** advanced feature. This is not needed most of the time. You can specify a `surface_factor`. This is usually a small +/- integer that helps account for surface slowdown or speedup. Distance and speed were measured on a hard surface, but a carpet surface may change how far the robot is moving. If the robot isn't moving quite as far on a surface as on another surface, pass a small positive number, such as 10, to the move forward command. If for whatever reason it's moving more than a foot, pass a small negative number. 
+
+```
+from modules.robot import *
+robot = Robot()
+robot.move_backward(surface_factor=10)
+#> The robot will move backward approximately 1 foot using a small surface factor.
+```
 
 ### Turning
-Coming soon
-{: .label .label-yellow }
+def turn(self, direction, speed=3, degrees=90, surface_factor=0):
+
+The robot will turn right or left, however many degrees you want it to. By default, you must pass a direction, either `direction="left"` or `direction="right"` to the `turn()` command. Both of these will turn the robot either 90 degrees to the left or right accordingly.
+```
+from modules.robot import *
+robot = Robot()
+robot.turn(direction="right")
+#> The robot will turn 90 degrees to the right
+```
+
+You can update the speed in which the robot turns. The default speed is 3, and this was the most tested turning speed, but other speeds should work as well. Speed is an integer between 1 and 10.
+```
+from modules.robot import *
+robot = Robot()
+robot.turn(direction="left", speed=5)
+#> The robot will turn 90 degrees to the left at speed 5
+```
+
+You can change the number of degrees your robot turns to the left or right by adding a `degrees=` parameter. This will override the 90 degree default.
+```
+from modules.robot import *
+robot = Robot()
+robot.turn(direction="right", degrees=180)
+#> The robot will turn 180 degrees to the right.
+```
+
+You can combine all of these parameters.
+```
+from modules.robot import *
+robot = Robot()
+robot.turn(direction="left", degrees=180, speed=8)
+#> The robot will turn 180 degrees to the left at speed 8.
+```
+
+There is one more **very** advanced feature. This is not needed most of the time. You can specify a `surface_factor`. This is usually a small +/- integer that helps account for surface slowdown or speedup. Turning was measured on a hard surface, but a carpet surface may change how far the robot turns. If the robot isn't turning quite as far on a surface as on another surface, pass a small positive number, such as 10, to the move forward command. If for whatever reason it's turning more than it should, pass a small negative number. 
+
+```
+from modules.robot import *
+robot = Robot()
+robot.move_turn(direction="right", surface_factor=10)
+#> The robot will turn right approximately 90 degrees, but may be a bit more because of the surface factor
+```
 
 ### Wait
 This command will pause the robot for 5 seconds.

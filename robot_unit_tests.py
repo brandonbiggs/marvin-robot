@@ -16,7 +16,7 @@ robot.speak("I am speaking! I'm about to wait for 5 seconds")
 
 robot.wait(5)
 
-robot.set_volume(100)
+robot.set_speaker_volume(100)
 
 robot.beep(5, override=True)
 

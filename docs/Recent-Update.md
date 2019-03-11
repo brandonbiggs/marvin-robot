@@ -4,9 +4,15 @@ title: Recent Updates
 nav_order: 5
 ---
 
-## Recent Features
+## Recent Features and Patch Notes
 
 ### March 10th Update
+- I thought March 9th's update was big. This one doesn't implement as many new features, but was very important for a lot of reasons below.
+- Moving forward, backward, and turning are all now based on distance and rotation of the motor rather than time. I tested these a fair amount. There's still more testing to be done, but they seem to be working really well. Not perfect, but a lot better than my poor implementation of time based movement and turning.
+- TONS of code documentation and cleanup. I read a lot about python code documentation. Hopefully the comments here are a little more 'correct'. With these changes, you can now use the `.__doc__` functionality. I don't know a ton about this, I just read that it was the more correct way to document code.
+- Cleaned up a couple of things with the features I implemented yesterday.
+
+### March 9th Update
 - Absolutely gigantic update
 - Lots and lots of error checking in the code. Hopefully this removes most of the bugs that people may have had. Combining these changes along with the Python syntax checking, things should be in good shape in terms of possible bugs. This isn't the case for movement just yet, but we're working on that. Should have an update for that tomorrow.
 - New Features! Beeping, songs, tunes, LEDs, volume control are all now available. See "full-reference" for more information about all of these.
