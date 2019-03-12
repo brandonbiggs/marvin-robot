@@ -247,7 +247,8 @@ class Robot:
         if self._DEBUG:
             print("DEBUG: Set volume to: ", volume)
         else:
-            ev3.Sound.set_speaker_volume(volume)
+            ev3.Sound.set_volume(volume)
+            time.sleep(3)
 
     def beep(self, number_of_beeps=1, override=False):
         """
@@ -912,10 +913,9 @@ class Gripper(Robot):
 class Marvin(Gripper):
     """
     Class for Gripper just in case someone still wants to call it Marvin
-    TODO - Test
     """
     def __init__(self, gripper_motor="outA", left_track="outB", right_track="outC"):
-        Gripper.__init__(self, left_track, right_track)
+        Gripper.__init__(self, gripper_motor=gripper_motor, left_track=left_track, right_track=right_track)
 
 
 class Optimus(Everstorm):
