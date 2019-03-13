@@ -44,6 +44,9 @@ ___
 
 ### Demos
 **[Baby Shark](#demo-baby-shark)**<br>
+**[Race Car](#demo-racecar)**<br>
+**[Dance](#demo-dance)**<br>
+**[Silly Sounds](#demo-play-sound)**<br>
 
 
 ### General Information
