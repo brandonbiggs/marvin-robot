@@ -4,38 +4,51 @@ title: Full Reference
 nav_order: 4
 ---
 # Full Reference
+## Table of Contents
+### General
+**[General Information](#general-information)**<br>
+**[Class Instantiation](#class-instantiation)**<br>
+**[Function Information](#function-information)**<br>
+**[Print to Screen](#print-to-screen)**<br>
+**[Buttons](#button-colors)**<br>
+**[Wait](#wait)**<br>
+___
 
+### Movement Control
+**[Move Forward](#move-forward)**<br>
+**[Move Backward](#moves-backward)**<br>
+**[Turning](#turning)**<br>
+
+___
+### Sounds
+**[Beep](#beep)**<br>
+**[Set Volume](#set-volume)**<br>
+**[Speak](#speak)**<br>
+**[Play Random Songs](#play-random-song)**<br>
+**[Play Random Tones](#play-random-tone)**<br>
+<!--**[Write Song - TODO](#write-song)**<br>
+**[Write Tune - TODO](#write-tune)**<br>-->
+
+___
+
+### Gripp3r Specific
+**[Close Claws](#close-claws)**<br>
+**[Open Claws](#open-claws)**<br>
+
+___
+<!--### Ev3rstorm Specific
+**[Ev3rstorm Specific](#ev3rstorm-specific-commands)**<br>
+___
+-->
+
+### General Information
 This reference list should provide you with fully executable examples of how to use each command to control your Lego Mindstorm. 
 
 - You **do not** need to use the `from modules.robot import *` command after each script. That will only need to be used once at the top of your file. The same can be said for your creation of robot with the line `robot = Robot()`. 
 - **Do not** copy the line that starts with `#>` in the examples. That is just an example of what is output after the commands are ran.
 - Each robot can execute all of the commands **not** listed in the specific robot command section. Example - The Ev3rstorm cannot use the Gripp3r commands to open or close hands. But both can use `print_to_screen` or `speak`.
 - Once your robot gets to ~20% battery life, once you run a command on the robot, it will tell you that the battery is getting low. This doesn't mean you have to change the batteries, but your results may differ from that of a robot with full batteries.
-- Every command should have an explanation command. If you run the command, you should get an explanation of the code. Example
-```
-from modules.robot import *
-robot = Robot()
-print(robot.beep.__doc__)
-```
-will print out an explanation of the function on your computer.
-
-## Table of Contents
-**[Class Instantiation](#class-instantiation)**<br>
-**[Beep](#beep)**<br>
-**[Button Colors](#button-colors)**<br>
-**[Move Forward](#move-forward)**<br>
-**[Move Backward](#moves-backward)**<br>
-**[Play Random Songs](#play-random-song)**<br>
-**[Play Random Tones](#play-random-tone)**<br>
-**[Print](#print)**<br>
-**[Set Volume](#set-volume)**<br>
-**[Speak](#speak)**<br>
-**[Turning](#turning)**<br>
-**[Wait](#wait)**<br>
-**[Write Song - TODO](#write-song)**<br>
-**[Write Tune - TODO](#write-tune)**<br>
-**[Gripp3r Specific](#gripp3r-specific-commands)**<br>
-**[Ev3rstorm Specific](#ev3rstorm-specific-commands)**<br>
+___
 
 ### Class Instantiation
 By default, the class is very straightforward to instantiate.
@@ -60,7 +73,19 @@ robot = Robot(debug=True)
 #> You are now in debug mode. Commands will run on your computer, but not on the robot.
 ```
 
-### Print
+___
+
+### Function Information
+Every command should have an explanation command. To get this explanation, use your computer to run the following command `robot.<function_name>.__doc__`. You should get an explanation of the function. Just replace `<function_name>` with the function you want information about, excluding the parenthesis. This will not work on the robot and will only work on the computer you're programming with. Here's an example:
+```
+from modules.robot import *
+robot = Robot()
+print(robot.beep.__doc__)
+```
+This will print out an explanation of the `beep` function on your computer.
+___
+
+### Print to Screen
 This will allow you to print to your Lego Mindstorm's screen.
 The print_to_screen command does not need any parameters by default.
 
@@ -79,43 +104,60 @@ robot = Robot()
 robot.print_to_screen("Put whatever you want inside these quotes!")
 #> Put whatever you want inside these quotes!
 ```
+___
 
-### Set Volume
-You can change the speaker volume of the Lego Mindstorm. The volume is a percent between 0 and 100 where 0 is no sound and 100 is max. By default, this command will set the volume at 80%. The volume is not very loud on these, so 100% isn't too terrible to hear. This only works for the speak command. Does not affect the beeps or tone commands.
+### Button Colors
+You can change the LED colors of two buttons on the Mindstorm controller. By default, the left button is set to be green.
 ```
 from modules.robot import *
 robot = Robot()
-robot.set_volume()
-#> Volume of speaker will be set to 80%
+robot.robot.set_button_colors()
+#> The left button will be set to green
 ```
 
-Set the volume to whatever you'd like.
+You are able to use the following colors: 'black', 'red', 'green', 'amber', 'orange', 'yellow'. Just set the parameter to any of these colors.
+ ```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors(color="orange")
+#> The left button will be set to orange
+```
+
+You can specify the right button as well.
+ ```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors(color="orange", button="right")
+#> The right button will be set to orange
+```
+
+You may also specify a brightness percentage from 0 to 100, using the last parameter `brightness`.
+ ```
+from modules.robot import *
+robot = Robot()
+robot.robot.set_button_colors(color="orange", button="right", brightness=50)
+#> The right button will be set to orange with brightness set to 50%
+```
+___
+
+### Wait
+This command will pause the robot for 5 seconds.
 ```
 from modules.robot import *
 robot = Robot()
-robot.set_volume(100)
-#> Volume of speaker will be set to 100%
+robot.wait()
+#> 5 second pause
 ```
 
-### Speak
-Use this command to have your Lego Mindstorm speak to you through the 
-built in speaker. The speak command does not need any parameters 
-by default.
-
+You can increase or decrease this time by passing the number of seconds
+as a parameter.
 ```
 from modules.robot import *
 robot = Robot()
-robot.speak()
-#> Hello. I am Marvin. Nice to meet you.
+robot.wait(seconds=10)
+#> 10 second pause
 ```
-
-You are welcome to pass a statement to the speak command as well.
-```
-from modules.robot import *
-robot = Robot()
-robot.speak("Put whatever you want inside these quotes!")
-#> Put whatever you want inside these quotes!
-```
+___
 
 ### Move Forward
 The move forward command allows the robot to move forward however many feet you want it to. There are a couple of settings to make it more powerful, but by default, the `move_forward()` command will move the robot forward one foot.
@@ -166,6 +208,7 @@ robot = Robot()
 robot.move_forward(surface_factor=10)
 #> The robot will move forward approximately 1 foot using a small surface factor.
 ```
+___
 
 ### Moves Backward
 The move backward command allows the robot to move backward however many feet you want it to. There are a couple of settings to make it more powerful, but by default, the `move_backward()` command will move the robot backward one foot.
@@ -216,6 +259,7 @@ robot = Robot()
 robot.move_backward(surface_factor=10)
 #> The robot will move backward approximately 1 foot using a small surface factor.
 ```
+___
 
 ### Turning
 def turn(self, direction, speed=3, degrees=90, surface_factor=0):
@@ -260,24 +304,7 @@ robot = Robot()
 robot.move_turn(direction="right", surface_factor=10)
 #> The robot will turn right approximately 90 degrees, but may be a bit more because of the surface factor
 ```
-
-### Wait
-This command will pause the robot for 5 seconds.
-```
-from modules.robot import *
-robot = Robot()
-robot.wait()
-#> 5 second pause
-```
-
-You can increase or decrease this time by passing the number of seconds
-as a parameter.
-```
-from modules.robot import *
-robot = Robot()
-robot.wait(seconds=10)
-#> 10 second pause
-```
+___
 
 ### Beep
 The robot can beep at you with a simple command.
@@ -303,47 +330,46 @@ robot = Robot()
 robot.beep(300, override=True)
 #> 300 beeps will emit from the robots speaker
 ```
+___
 
-### Button Colors
-You can change the LED colors of two buttons on the Mindstorm controller. By default, the left button is set to be green.
+### Set Volume
+You can change the speaker volume of the Lego Mindstorm. The volume is a percent between 0 and 100 where 0 is no sound and 100 is max. By default, this command will set the volume at 80%. The volume is not very loud on these, so 100% isn't too terrible to hear. This only works for the speak command. Does not affect the beeps or tone commands.
 ```
 from modules.robot import *
 robot = Robot()
-robot.robot.set_button_colors()
-#> The left button will be set to green
+robot.set_volume()
+#> Volume of speaker will be set to 80%
 ```
 
-You are able to use the following colors: 'black', 'red', 'green', 'amber', 'orange', 'yellow'. Just set the parameter to any of these colors.
- ```
+Set the volume to whatever you'd like.
+```
 from modules.robot import *
 robot = Robot()
-robot.robot.set_button_colors(color="orange")
-#> The left button will be set to orange
+robot.set_volume(100)
+#> Volume of speaker will be set to 100%
 ```
+___
 
-You can specify the right button as well.
- ```
+### Speak
+Use this command to have your Lego Mindstorm speak to you through the 
+built in speaker. The speak command does not need any parameters 
+by default.
+
+```
 from modules.robot import *
 robot = Robot()
-robot.robot.set_button_colors(color="orange", button="right")
-#> The right button will be set to orange
+robot.speak()
+#> Hello. I am Marvin. Nice to meet you.
 ```
 
-You may also specify a brightness percentage from 0 to 100, using the last parameter `brightness`.
- ```
+You are welcome to pass a statement to the speak command as well.
+```
 from modules.robot import *
 robot = Robot()
-robot.robot.set_button_colors(color="orange", button="right", brightness=50)
-#> The right button will be set to orange with brightness set to 50%
+robot.speak("Put whatever you want inside these quotes!")
+#> Put whatever you want inside these quotes!
 ```
-
-### Write Song
-Coming soon
-{: .label .label-yellow }
-
-### Write Tune
-Coming soon
-{: .label .label-yellow }
+___
 
 ### Play Random Song
 The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
@@ -355,16 +381,18 @@ robot = Robot()
 robot.sing_random_song(length="short")
 #> Random song will be selected and played
 ```
+___
 
 ### Play Random Tone
 The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
 
 The robot has the ability to play a random tune using a series of different sounding tunes. There are several predefined tunes that have been written already for you.
+___
 
 ## Gripp3r Specific Commands
 These commands can only be run on the Gripp3r Lego Mindstorm.
 
-### Close Gripp3r Claws
+### Close Claws
 This will close the Gripp3r's claws and move the claws upward, lifting
 the object slightly off the ground.
 ```
@@ -373,8 +401,9 @@ robot = Robot()
 gripper = Gripper()
 gripper.close_hands()
 ```
+___
 
-### Open Gripp3r Claws
+### Open Claws
 This will open the Gripp3r's claws and lower them to the base of the robot.
 ```
 from modules.robot import *
@@ -383,6 +412,16 @@ gripper = Gripper()
 gripper.open_hands()
 ```
 
+<!--
 ## Ev3rStorm Specific Commands
 Coming soon
 {: .label .label-yellow }
+
+### Write Song
+Coming soon
+{: .label .label-yellow }
+
+### Write Tune
+Coming soon
+{: .label .label-yellow }
+-->
