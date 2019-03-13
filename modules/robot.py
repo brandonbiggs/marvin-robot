@@ -840,24 +840,30 @@ class Robot:
         """
         Turn the robot into a mini racecar
         """
-        self.speak("Starting my engines!")
-        self.demo_play_sound("car")
-        self.move_forward(distance_in_feet=.1, speed=10)
-        self.speak("VROOM VROOM")
-        self.move_backward(distance_in_feet=.1, speed=10)
+        if self._DEBUG:
+            print("DEBUG: being a racecar!")
+        else:
+            self.speak("Starting my engines!")
+            self.demo_play_sound("car")
+            self.move_forward(distance_in_feet=.1, speed=10)
+            self.speak("VROOM VROOM")
+            self.move_backward(distance_in_feet=.1, speed=10)
 
     def demo_dance(self):
         """
         Tries to dance
         """
-        self.speak("Lets dance!")
-        self.turn("right", speed=10, degrees=15)
-        self.move_forward(distance_in_feet=.1, speed=10)
-        self.move_backward(distance_in_feet=.1, speed=10)
-        self.move_forward(distance_in_feet=.1, speed=10)
-        self.move_backward(distance_in_feet=.1, speed=10)
-        self.turn("left", speed=10, degrees=720)
-        self.speak("Woohoo! That was a fun dance.")
+        if self._DEBUG:
+            print("DEBUG: doing robot dance")
+        else:
+            self.speak("Lets dance!")
+            self.turn("right", speed=10, degrees=15)
+            self.move_forward(distance_in_feet=.1, speed=10)
+            self.move_backward(distance_in_feet=.1, speed=10)
+            self.move_forward(distance_in_feet=.1, speed=10)
+            self.move_backward(distance_in_feet=.1, speed=10)
+            self.turn("left", speed=10, degrees=720)
+            self.speak("Woohoo! That was a fun dance.")
 
     def demo_babyshark(self):
         """
@@ -866,7 +872,10 @@ class Robot:
         song = "Baby shark, doo doo doo doo" + \
             "Mommy shark, doo doo doo doo" + \
             "Daddy shark, doo doo doo doo"
-        self.speak(song)
+        if self._DEBUG:
+            print("DEBUG: playing babyshark.")
+        else:
+            self.speak(song)
 
     def demo_play_sound(self, name="car"):
         """
