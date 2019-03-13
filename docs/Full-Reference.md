@@ -12,6 +12,7 @@ nav_order: 4
 **[Print to Screen](#print-to-screen)**<br>
 **[Buttons](#button-colors)**<br>
 **[Wait](#wait)**<br>
+
 ___
 
 ### Movement Control
@@ -48,6 +49,7 @@ This reference list should provide you with fully executable examples of how to 
 - **Do not** copy the line that starts with `#>` in the examples. That is just an example of what is output after the commands are ran.
 - Each robot can execute all of the commands **not** listed in the specific robot command section. Example - The Ev3rstorm cannot use the Gripp3r commands to open or close hands. But both can use `print_to_screen` or `speak`.
 - Once your robot gets to ~20% battery life, once you run a command on the robot, it will tell you that the battery is getting low. This doesn't mean you have to change the batteries, but your results may differ from that of a robot with full batteries.
+
 ___
 
 ### Class Instantiation
@@ -387,6 +389,7 @@ ___
 The difference between a song and a tune is with how each is produced by the robot. See section on writing tones and writing songs for more information on the differences.
 
 The robot has the ability to play a random tune using a series of different sounding tunes. There are several predefined tunes that have been written already for you.
+
 ___
 
 ## Gripp3r Specific Commands
