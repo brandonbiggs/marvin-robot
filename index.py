@@ -18,14 +18,14 @@ robot = Robot()
 robot.print_to_screen(statement="Print test to screen!")
 
 # Move the robot
-robot.move_forward(distance_in_feet=5.0)
-robot.move_backward(distance_in_feet=5.0)
+robot.move_forward(distance_in_feet=1.0)
+robot.move_backward(distance_in_feet=1.0)
 robot.turn(direction="right")
 robot.turn(direction="left")
 
 # Make the robot produce noise
 robot.set_speaker_volume(100)
-robot.speak(statement="Hello. I am Marvin. Nice to meet you!")
+robot.speak(statement="Hello. I am a robot. Nice to meet you!")
 robot.beep(5)
 robot.sing_random_song()
 

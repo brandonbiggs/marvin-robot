@@ -42,6 +42,10 @@ ___
 ___
 -->
 
+### Demos
+**[Baby Shark](#demo-baby-shark)**<br>
+
+
 ### General Information
 This reference list should provide you with fully executable examples of how to use each command to control your Lego Mindstorm. 
 
@@ -400,7 +404,6 @@ This will close the Gripp3r's claws and move the claws upward, lifting
 the object slightly off the ground.
 ```
 from modules.robot import *
-robot = Robot()
 gripper = Gripper()
 gripper.close_hands()
 ```
@@ -410,7 +413,6 @@ ___
 This will open the Gripp3r's claws and lower them to the base of the robot.
 ```
 from modules.robot import *
-robot = Robot()
 gripper = Gripper()
 gripper.open_hands()
 ```
@@ -428,3 +430,44 @@ Coming soon
 Coming soon
 {: .label .label-yellow }
 -->
+
+___
+
+### Demo Baby Shark
+Sings a short and slightly modified version of babyshark.
+```
+from modules.robot import *
+robot = Robot()
+robot.demo_babyshark()
+```
+
+___
+
+### Demo Racecar
+The robot will act as a racecar, but only moves a few inches at a time.
+```
+from modules.robot import *
+robot = Robot()
+robot.demo_racecar()
+```
+___
+
+### Demo Dance
+The robot will do a mini robot dance.
+```
+from modules.robot import *
+robot = Robot()
+robot.demo_dance()
+```
+___
+
+### Demo Play Sound
+You can play a few short sound bytes. These are different from tones and songs as this is actually using a .wav file.
+
+You have two choices here, `name="car"` or `name="sneeze"`. 
+```
+from modules.robot import *
+robot = Robot()
+robot.demo_play_sound(name="sneeze")
+#> The robot will sneeze
+```

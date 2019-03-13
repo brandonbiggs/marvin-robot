@@ -833,6 +833,61 @@ class Robot:
         else:
             time.sleep(seconds)
 
+    ###############################################
+    # Demo Functions
+
+    def demo_racecar(self):
+        """
+        Turn the robot into a mini racecar
+        """
+        self.speak("Starting my engines!")
+        self.demo_play_sound("car")
+        self.move_forward(distance_in_feet=.1, speed=10)
+        self.speak("VROOM VROOM")
+        self.move_backward(distance_in_feet=.1, speed=10)
+
+    def demo_dance(self):
+        """
+        Tries to dance
+        """
+        self.speak("Lets dance!")
+        self.turn("right", speed=10, degrees=15)
+        self.move_forward(distance_in_feet=.1, speed=10)
+        self.move_backward(distance_in_feet=.1, speed=10)
+        self.move_forward(distance_in_feet=.1, speed=10)
+        self.move_backward(distance_in_feet=.1, speed=10)
+        self.turn("left", speed=10, degrees=720)
+        self.speak("Woohoo! That was a fun dance.")
+
+    def demo_babyshark(self):
+        """
+        Plays a few lines of baby shark
+        """
+        song = "Baby shark, doo doo doo doo" + \
+            "Mommy shark, doo doo doo doo" + \
+            "Daddy shark, doo doo doo doo"
+        self.speak(song)
+
+    def demo_play_sound(self, name="car"):
+        """
+        Plays a demo sound
+
+        Keyword arguments:
+            name -- this is the nickname for the name of the file you want to play
+                "car" -- plays wav of a car starting
+                "sneeze" -- plays wav of a man sneezing
+        """
+        if name == "car":
+            wav_file = "car.wav"
+        elif name == "sneeze":
+            wav_file = "sneeze.man.wav"
+        else: wav_file = "car.wav"
+
+        if self._DEBUG:
+            print("DEBUG: playing wav file:", wav_file)
+        else:
+            ev3.Sound.play("/home/robot/marvin-wrapper/modules/sounds/" + wav_file).wait()
+
 
 class Everstorm(Robot):
     """
